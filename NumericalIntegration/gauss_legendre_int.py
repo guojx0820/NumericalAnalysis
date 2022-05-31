@@ -50,7 +50,7 @@ class GaussLegendreIntegration:
         # print(diff_p_n)
         # 求解高斯——勒让德多项式的全部零点
         self.zeros_points = np.asarray(sympy.solve(diff_p_n, t), dtype=np.float_)
-        print("高斯节点:", self.zeros_points, sep="\n")
+        # print("高斯点:", self.zeros_points, sep="\n")
         return diff_p_n, t
 
     def _cal_Ak_coef_(self):
@@ -64,4 +64,5 @@ class GaussLegendreIntegration:
         # 区间转换，[a, b] --> [-1, 1]
         self.A_k = self.A_k * (self.b - self.a) / 2
         self.zeros_points = (self.b - self.a) / 2 * self.zeros_points + (self.a + self.b) / 2
-        print("求积系数:", self.A_k, sep="\n")
+        # print("高斯点:", self.zeros_points, sep="\n")
+        # print("求积系数:", self.A_k, sep="\n")

@@ -30,5 +30,5 @@ class CompositeGaussLegendreIntegration:
         interval_len = (self.b - self.a) / self.interval_num
         for k in range(self.interval_num - 1):
             fun_value += self.int_fun(self.a + (k + 1 / 2) * interval_len)
-        self.int_value *= interval_len
-        return self.int_value.evalf()
+        self.int_value = interval_len * fun_value
+        return self.int_value
